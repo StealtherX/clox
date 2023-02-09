@@ -2,7 +2,8 @@
 #include "chunk.h"
 #include "debug.h"
 
-int main(int argc, const char* argv[]) {
+int main(int argc, const char *argv[])
+{
     Chunk chunk;
     initChunk(&chunk);
 
@@ -13,6 +14,6 @@ int main(int argc, const char* argv[]) {
 
     disassembleChunk(&chunk, "test chunk");
     freeChunk(&chunk);
-    
+
     return 0;
 }
