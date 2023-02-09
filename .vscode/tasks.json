@@ -9,7 +9,7 @@
         "-g",
         "${workspaceFolder}/*.c",
         "-o",
-        "${fileDirname}\\build\\clox.exe"
+        "${fileDirname}\\bin\\clox.exe"
       ],
       "options": {
         "cwd": "${fileDirname}"
