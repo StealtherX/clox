@@ -1,6 +1,7 @@
 {
   "files.associations": {
     "debug.h": "c",
-    "memory.h": "c"
+    "memory.h": "c",
+    "table.h": "c"
   }
 }
