@@ -732,7 +732,7 @@ static void method() {
 }
 
 static void classDeclaration() {
-    consume(TOKEN_IDENTIFIER, "Expect class name/");
+    consume(TOKEN_IDENTIFIER, "Expect class name.");
     Token className = parser.previous;
     uint8_t nameConstant = identifierConstant(&parser.previous);
     declareVariable();
@@ -753,14 +753,14 @@ static void classDeclaration() {
             error("A class can't inherit from itself.");
         }
 
+        beginScope();
+        addLocal(syntheticToken("super"));
+        defineVariable(0);
+
         namedVariable(className, false);
         emitByte(OP_INHERIT);
         classCompiler.hasSuperclass = true;
     }
-
-    beginScope();
-    addLocal(syntheticToken("super"));
-    defineVariable(0);
 
     namedVariable(className, false);
     consume(TOKEN_LEFT_BRACE, "Expect '{' before class body.");

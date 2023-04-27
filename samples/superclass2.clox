@@ -16,3 +16,4 @@ class Cruller < Doughnut {
 }
 
 Doughnut().cook();
+Cruller().cook();
